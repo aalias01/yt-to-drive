@@ -1,0 +1,21 @@
+# Local docs
+local_docs/
+
+# Python
+__pycache__/
+venv/
+.env
+dist/
+build/
+
+# Google API credentials (never commit these)
+credentials.json
+google-services.json
+token.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
