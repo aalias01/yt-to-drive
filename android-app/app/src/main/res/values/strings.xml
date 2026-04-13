@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">YT to Drive</string>
+    <string name="settings_title">Settings</string>
+    <string name="main_open_settings">Settings</string>
+    <string name="share_received_hint">Shared link</string>
+    <string name="share_continue">Continue</string>
+    <string name="share_no_url">No link was shared.</string>
+    <string name="folder_picker_title">Choose folder</string>
+    <string name="not_implemented_yet">This step will connect to Google Drive and conversion in a later update.</string>
+</resources>
