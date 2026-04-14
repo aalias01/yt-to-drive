@@ -42,7 +42,7 @@ If you later add Firebase, place `google-services.json` under `app/` — it is *
 
 ## Current scope
 
-Share target, folder picker with **Google Sign-In** and **Drive folder listing** under Music, DataStore for last chosen folder, and a stub **WorkManager** worker. Audio extraction (NewPipeExtractor or yt-dlp), FFmpeg encoding, Drive **file** upload, and full upload pipeline come next.
+Share target → folder picker (Drive **Music** subfolders) → **filename** screen → **WorkManager** job with URL, folder id, and output base name (worker still a **stub**; logs inputs in Logcat). **Try Drive folders** from the home screen only saves the folder (no link). Next: real download, FFmpeg MP3, Drive upload, failure notifications.
 
 ## Troubleshooting: Kotlin compile daemon
 

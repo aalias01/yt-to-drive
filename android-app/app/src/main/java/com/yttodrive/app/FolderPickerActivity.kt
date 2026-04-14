@@ -1,5 +1,6 @@
 package com.yttodrive.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.result.contract.ActivityResultContracts
@@ -11,7 +12,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.common.api.ApiException
 import com.google.android.material.snackbar.Snackbar
 import com.google.api.client.googleapis.extensions.android.gms.auth.UserRecoverableAuthIOException
-import com.google.api.services.drive.Drive
 import com.yttodrive.app.auth.GoogleSignInConfig
 import com.yttodrive.app.databinding.ActivityFolderPickerBinding
 import com.yttodrive.app.drive.DriveRepository
@@ -119,11 +119,22 @@ class FolderPickerActivity : AppCompatActivity() {
     private fun onFolderChosen(folder: DriveFolder) {
         lifecycleScope.launch {
             PreferencesManager.setLastFolder(this@FolderPickerActivity, folder.id, folder.name)
-            Snackbar.make(
-                binding.root,
-                getString(R.string.folder_saved, folder.name),
-                Snackbar.LENGTH_LONG,
-            ).show()
+            val shared = intent.getStringExtra(EXTRA_SHARED_TEXT).orEmpty()
+            if (shared.isNotEmpty()) {
+                startActivity(
+                    Intent(this@FolderPickerActivity, FilenameActivity::class.java).apply {
+                        putExtra(FilenameActivity.EXTRA_SOURCE_URL, shared)
+                        putExtra(FilenameActivity.EXTRA_FOLDER_ID, folder.id)
+                        putExtra(FilenameActivity.EXTRA_FOLDER_NAME, folder.name)
+                    },
+                )
+            } else {
+                Snackbar.make(
+                    binding.root,
+                    getString(R.string.folder_saved, folder.name),
+                    Snackbar.LENGTH_LONG,
+                ).show()
+            }
         }
     }
 

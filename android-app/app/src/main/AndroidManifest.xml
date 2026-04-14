@@ -42,6 +42,11 @@
             android:exported="false" />
 
         <activity
+            android:name=".FilenameActivity"
+            android:exported="false"
+            android:label="@string/filename_title" />
+
+        <activity
             android:name=".SettingsActivity"
             android:exported="false"
             android:label="@string/settings_title" />

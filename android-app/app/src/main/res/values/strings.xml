@@ -18,4 +18,12 @@
     <string name="folder_saved">Saved folder: %1$s</string>
     <string name="not_implemented_yet">Additional settings will appear in a later update.</string>
     <string name="open_folder_picker_test">Try Drive folders</string>
+    <string name="filename_title">File name</string>
+    <string name="filename_hint">Name for the MP3 (no extension needed)</string>
+    <string name="filename_mp3_note">The file will be saved as this name plus .mp3 in the folder you chose.</string>
+    <string name="filename_confirm">Add to queue</string>
+    <string name="filename_missing_data">Missing link or folder. Go back and try again.</string>
+    <string name="filename_empty">Enter a file name.</string>
+    <string name="filename_queued">Added to background queue (conversion comes next).</string>
+    <string name="filename_context_fmt">Folder: %1$s\nLink: %2$s</string>
 </resources>
