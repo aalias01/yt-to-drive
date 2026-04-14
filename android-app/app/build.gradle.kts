@@ -50,4 +50,9 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.androidx.datastore.preferences)
     implementation(libs.play.services.auth)
+    implementation(libs.google.api.client.android)
+    implementation(libs.google.http.client.gson)
+    implementation(libs.google.api.services.drive)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.swiperefreshlayout)
 }

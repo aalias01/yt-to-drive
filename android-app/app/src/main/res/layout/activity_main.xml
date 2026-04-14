@@ -34,4 +34,14 @@
         android:text="@string/main_open_settings"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/description" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/openFolderPicker"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="@string/open_folder_picker_test"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/openSettings" />
 </androidx.constraintlayout.widget.ConstraintLayout>

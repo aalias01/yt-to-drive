@@ -7,5 +7,15 @@
     <string name="share_continue">Continue</string>
     <string name="share_no_url">No link was shared.</string>
     <string name="folder_picker_title">Choose folder</string>
-    <string name="not_implemented_yet">This step will connect to Google Drive and conversion in a later update.</string>
+    <string name="folder_picker_no_shared_link">(Opened without a shared link — pick a folder for your next uploads.)</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_failed">Sign-in failed (code %1$d).</string>
+    <string name="sign_in_required">Sign in to load your Drive folders.</string>
+    <string name="signed_in_as">Signed in as %1$s</string>
+    <string name="loading_folders">Loading folders…</string>
+    <string name="music_folder_missing">No Music folder in My Drive. Create a folder named Music at the root of My Drive, then pull to refresh.</string>
+    <string name="folders_under_music">%1$d folder(s) inside Music.</string>
+    <string name="folder_saved">Saved folder: %1$s</string>
+    <string name="not_implemented_yet">Additional settings will appear in a later update.</string>
+    <string name="open_folder_picker_test">Try Drive folders</string>
 </resources>

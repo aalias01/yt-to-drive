@@ -19,13 +19,30 @@ Install the debug APK on a device or emulator from Android Studio (**Run**), or:
 ./gradlew :app:installDebug
 ```
 
-## Google Drive and Firebase
+## Google Drive API (one-time setup)
 
-For Sign-In and Drive API you will add OAuth credentials in Google Cloud and, when you use Firebase or the Google Services plugin, place `google-services.json` under `app/`. **Do not commit** that file; it stays out of git via the repository root `.gitignore`.
+Sign-In and folder listing use **Google Sign-In** plus the **Drive REST API**. You do **not** need Firebase or `google-services.json` for this flow.
+
+1. In [Google Cloud Console](https://console.cloud.google.com/), create or select a project and **enable the Google Drive API**.
+2. Configure the **OAuth consent screen** (Testing is fine while you develop; add your Google account as a test user if the app stays in testing mode).
+3. Create an **OAuth 2.0 Client ID** of type **Android**:
+   - **Package name:** `com.yttodrive.app`
+   - **SHA-1:** debug keystore (run on your Mac):
+
+     ```bash
+     keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey \
+       -storepass android -keypass android
+     ```
+
+     Copy the **SHA1** fingerprint into the client configuration.
+
+4. Install the app on a device/emulator signed with that debug key and open **Try Drive folders** or continue from **Share** → **Continue**. Sign in when prompted. You must have a top-level folder named **Music** in My Drive; under it, this app lists **subfolders** you can tap to save as the upload target.
+
+If you later add Firebase, place `google-services.json` under `app/` — it is **gitignored** at the repo root and must not be committed.
 
 ## Current scope
 
-This module includes the share target, basic navigation, DataStore preferences, and a stub background worker. Audio extraction (NewPipeExtractor or yt-dlp), FFmpeg, Drive upload, and WorkManager wiring come in follow-up changes.
+Share target, folder picker with **Google Sign-In** and **Drive folder listing** under Music, DataStore for last chosen folder, and a stub **WorkManager** worker. Audio extraction (NewPipeExtractor or yt-dlp), FFmpeg encoding, Drive **file** upload, and full upload pipeline come next.
 
 ## Troubleshooting: Kotlin compile daemon
 

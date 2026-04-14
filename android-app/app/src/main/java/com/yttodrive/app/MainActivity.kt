@@ -17,5 +17,8 @@ class MainActivity : AppCompatActivity() {
         binding.openSettings.setOnClickListener {
             startActivity(Intent(this, SettingsActivity::class.java))
         }
+        binding.openFolderPicker.setOnClickListener {
+            startActivity(Intent(this, FolderPickerActivity::class.java))
+        }
     }
 }
